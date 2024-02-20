@@ -7,12 +7,12 @@
 
 import UIKit
 
-protocol SceneFactory {
+protocol LoginSceneFactoryProtocol {
     var configurator: LoginSceneConfigurator! { get set }
     func makeLoginScene() -> UIViewController
 }
 
-final class DefaultSceneFactory: SceneFactory {
+final class LoginSceneFactory: LoginSceneFactoryProtocol {
     var configurator: LoginSceneConfigurator!
     
     func makeLoginScene() -> UIViewController {

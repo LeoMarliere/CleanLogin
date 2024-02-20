@@ -15,16 +15,19 @@ protocol LoginSceneRoutingProtocol {
 final class LoginSceneRouter {
     
     weak var source: UIViewController?
-    private let sceneFactory: SceneFactory
+    private let sceneFactory: LoginSceneFactoryProtocol
     
-    init(sceneFactory: SceneFactory) {
+    init(sceneFactory: LoginSceneFactoryProtocol) {
         self.sceneFactory = sceneFactory
     }
 }
 
 extension LoginSceneRouter: LoginSceneRoutingProtocol {
     func showLogingFailure(message: String) {
-        source?.present(UIAlertController.failure(message), animated: true)
+        let action = UIAlertAction(title: "OK", style: .destructive)
+        let alertController = UIAlertController(title: "Login Failure",message: message,preferredStyle: .alert)
+        alertController.addAction(action)
+        source?.present(alertController, animated: true)
     }
     
     func showLoginSuccess() {

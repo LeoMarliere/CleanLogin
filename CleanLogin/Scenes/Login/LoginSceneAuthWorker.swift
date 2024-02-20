@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 protocol LoginSceneAuthProtocol {
     func makeAuth( completion: @escaping (Result<CleanLoginUser, LoginSceneAuthWorker.LoginSceneAuthWorkerError>) -> Void)

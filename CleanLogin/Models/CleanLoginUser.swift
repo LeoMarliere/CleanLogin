@@ -9,7 +9,8 @@ import Foundation
 
 struct CleanLoginUser {
     var id: String?
-    var name: String?
+    var firstName: String?
+    var lastName: String?
     var email: String?
     var phonenumber: String?
 }

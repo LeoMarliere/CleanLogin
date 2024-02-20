@@ -22,6 +22,6 @@ extension LoginScenePresenter: LoginScenePresenterProtocol {
     }
     
     func presentLogingSuccess(user: CleanLoginUser) {
-        view?.showLogingSuccess(fullUserName: user.firstName + " " + user.lastName)
+        view?.showLogingSuccess(fullUserName: (user.firstName ?? "") + " " + (user.lastName ?? ""))
     }
 }

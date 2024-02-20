@@ -18,7 +18,7 @@ class LoginSceneInteractor {
     var authWorker: LoginSceneAuthProtocol?
 }
 
-class LoginSceneInteractor: LoginSceneInteractorProtocol {
+extension LoginSceneInteractor: LoginSceneInteractorProtocol {
     
     func tryToLogIn() {
         authWorker?.makeAuth(completion: { result in
